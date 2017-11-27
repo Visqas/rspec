@@ -22,4 +22,8 @@ class AuthHelper < HelperBase
   def logined?
     element_present?(:xpath, '(//a[contains(text(),\'exit\')])')
   end
+
+  def sign_in
+    @driver.find_element(:xpath, '/html/body/nav/div/div/div/nav/div[2]/ul/div/li[1]/a').click
+  end
 end

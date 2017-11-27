@@ -13,14 +13,14 @@ describe 'my-events' do
     @app.event.create_event_with(event)
   end
 
-  it 'should delete event' do
-    @app.navigation.go_to_events_page
-    @app.event.remove_last_event
-  end
-
   it 'should edit last event' do
     @app.navigation.go_to_events_page
     event = Event.new('Change event', 'KEK')
     @app.event.edit_event(event)
+  end
+
+  it 'should delete event' do
+    @app.navigation.go_to_events_page
+    @app.event.remove_last_event
   end
 end

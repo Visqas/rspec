@@ -5,7 +5,7 @@ require '../helpers/auth_helper'
 describe 'auth' do
   include Bases::TestBase
   it 'should login with valid data' do
-    user = User.new('vi@g.com', '123456')
+    user = User.new(@app.json["email"], @app.json["password"])
     @app.auth.login_with(user)
     @app.auth.logout
   end

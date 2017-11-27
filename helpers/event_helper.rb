@@ -14,7 +14,7 @@ class EventHelper < HelperBase
   end
 
   def remove_last_event
-    @driver.find_element(:css, 'div.medium-5.cloumns.columns > div:nth-child(5) > li:nth-child(2) > a ').click
+    @driver.find_element(:css, 'div.medium-5.cloumns.columns > div:nth-child(5) > li:nth-child(2) > a').click
   end
 
   def edit_event(event)
