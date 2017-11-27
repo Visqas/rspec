@@ -8,6 +8,7 @@ describe 'auth' do
     user = User.new(@app.json["email"], @app.json["password"])
     @app.auth.login_with(user)
     @app.auth.logout
+    expect(@app.auth.logined?).to eq(true)
   end
 
   it 'should not login with invalid data' do
