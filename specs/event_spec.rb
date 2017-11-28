@@ -23,6 +23,6 @@ describe 'my-events' do
   it 'should delete event' do
     @app.navigation.go_to_events_page
     @app.event.remove_last_event
-    expect(@app.event.deleted?).to eq(true)
+    expect(@app.event.deleted?).to eq(false)
   end
 end
