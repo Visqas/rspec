@@ -21,4 +21,16 @@ class EventHelper < HelperBase
     @driver.find_element(:css, 'div.medium-5.cloumns.columns > div:nth-child(5) > li:nth-child(1) > a').click
     create_event_with(event)
   end
+
+  def create?
+    element_present?(:xpath, '/html/body/div/div/div[1]/span[1]')
+  end
+
+  def deleted?
+    !element_present?(:xpath, '/html/body/div/div/div[1]/span[1]')
+  end
+
+  def edited?
+    element_present?(:xpath, '(//p[contains(text(),\'KEK\')])')
+  end
 end
