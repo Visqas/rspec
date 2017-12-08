@@ -8,16 +8,15 @@ require 'faker'
 describe 'my-events' do
   include Bases::AuthBase
   name_event = Faker::Commerce.department
-  description_event = Faker::Matz.quote
+  description_event = Faker::Hobbit.quote
  
   it 'should create event' do
-    @app.navigation.go_to_events_page
-    @app.navigation.go_to_create_events_page
-    
-    event = Event.new(name_event, description_event)
-    
-    @app.event.create_event_with(event)
-    expect(@app.event.create?).to eq(true)
+   (0..5).each do |i|
+      @app.navigation.go_to_events_page
+      @app.navigation.go_to_create_events_page
+      event = Event.new(name_event, description_event)
+      @app.event.create_event_with(event)
+    end
   end
 
   it 'should edit last event' do

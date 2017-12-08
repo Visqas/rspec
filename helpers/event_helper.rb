@@ -31,6 +31,6 @@ class EventHelper < HelperBase
   end
 
   def edited?
-    element_present?(:xpath, '(//p[contains(text(),\'KEK\')])')
+    element_present?(:xpath, '/html/body/div/div/div[1]/span')
   end
 end
